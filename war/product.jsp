@@ -22,7 +22,7 @@
 	<table>
 	<% 
 	List<Product> products = (List<Product>)request.getAttribute("products");
-	if(products!=null){
+	if(products!=null && products.size()>0){
 	%>
 		<tr>
 			<td>Nombre</td>
