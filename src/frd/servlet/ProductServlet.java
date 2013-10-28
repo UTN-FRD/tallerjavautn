@@ -26,10 +26,7 @@ public class ProductServlet extends HttpServlet {
 
 		List<Product> products = ProductManager.getAll();
 		
-		if( prod!=null && !products.contains( prod ) ) products.add(prod);
-		
 		req.setAttribute("products", products);
 		req.getRequestDispatcher("/product.jsp").forward(req, resp);
-
 	}
 }

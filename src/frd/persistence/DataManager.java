@@ -3,7 +3,6 @@ package frd.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jdo.FetchGroup;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
@@ -29,6 +28,7 @@ public class DataManager {
 		 pm.deletePersistent(obj);
 	}
 
+	@SuppressWarnings("unchecked")
 	public static <T> List<T> getAll(Class<T> objClass) {
 		Query q = pm.newQuery(objClass);
 		List<T> results = null;
