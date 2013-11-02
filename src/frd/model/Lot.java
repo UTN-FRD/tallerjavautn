@@ -36,7 +36,7 @@ public class Lot {
 	public Date getDueDate() {
 		return dueDate;
 	}
-
+ 
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
