@@ -26,7 +26,7 @@
 	<!-- Tabla con todos los objetos enviados en el request desde el servlet -->
 	<table>
 		<tr>
-			<!-- <td> Fecha de Creación </td> -->
+			<td> Fecha de Creación </td>
 			<td> Fecha de Vencimiento </td>
 			<td> Monto inicial </td>
 			<td> Monto total </td>
