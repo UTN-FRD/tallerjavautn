@@ -21,6 +21,10 @@ public class DataManager {
 		}
 		return obj;
 	}
+	
+	public static <T> void remove(T obj){
+		pm.deletePersistent( obj );
+	}
 
 	public static <T> Boolean remove(Class<T> objClass, Long id){
 		T obj = pm.getObjectById( objClass, id );
