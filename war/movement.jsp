@@ -29,6 +29,23 @@
 			<td>Descripcion</td>
 			<td>LotId</td>
 		</tr>
+		<%
+			for( Lot lot : lots ) { 
+		%>
+		<tr>
+			<td><%= lot.getName() %></td>
+			<td><%= lot.getDescription() %></td>
+		</tr>
+	<% 
+		}
+	}else{
+	%>
+		<tr>
+			<td>No hay Lots cargados</td>
+		</tr>
+	<%
+	}
+	%>	
 	</table>
 </body>
 

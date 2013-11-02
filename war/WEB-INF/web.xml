@@ -40,6 +40,14 @@
 		<servlet-name>Test Lote</servlet-name>
 		<url-pattern>/test/lot</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>Test Movimiento</servlet-name>
+		<servlet-class>frd.test.MovementTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Test Movimiento</servlet-name>
+		<url-pattern>/test/movement</url-pattern>
+	</servlet-mapping>
 		
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
