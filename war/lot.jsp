@@ -19,20 +19,41 @@
 		Fecha de Vencimiento:<input type="text" name="dueDate"><br>
 		Monto inicial:<input type="text" name="initialAmount"><br>
 		Monto actual:<input type="text" name="currentAmount"><br>
-		Producto:<input type="text" name="product"><br>
+		Id Producto:<input type="text" name="product"><br>
 		<input type="submit">
 	</form>
 	<hr>
 	<!-- Tabla con todos los objetos enviados en el request desde el servlet -->
-	<table>
+	<table align="center" width="100%">
+	<% 
+	List<Lot> lots = (List<Lot>)request.getAttribute("lots");
+	if(lots!=null && lots.size()>0){
+	%>
 		<tr>
-			<td> Fecha de Creación </td>
-			<td> Fecha de Vencimiento </td>
-			<td> Monto inicial </td>
-			<td> Monto total </td>
-			<td> Monto actual </td>
-			<td> Producto </td>
+			<td>Fecha de vencimiento</td>
+			<td>Monto inicial</td>
+			<td>Monto actual</td>
+			<td>Id Producto</td>
 		</tr>
+	<%
+		for( Lot l : lots ) { 
+	%>
+		<tr>
+			<td><%= l.getDueDate() %></td>
+			<td><%= l.getInitialAmount() %></td>
+			<td><%= l.getCurrentAmount() %></td>
+			<td><%= l.getProduct() %></td>
+		</tr>
+	<% 
+		}
+	}else{
+	%>
+		<tr>
+			<td>No hay lots cargados</td>
+		</tr>
+	<%
+	}
+	%>	
 	</table>
 </body>
 
