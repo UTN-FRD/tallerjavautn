@@ -22,8 +22,15 @@ public class DataManager {
 		return obj;
 	}
 
-	public static <T> void remove(T obj){
-		 pm.deletePersistent(obj);
+	public static <T> Boolean remove(Class<T> objClass, Long id){
+		T obj = pm.getObjectById( objClass, id );
+		if ( obj != null ){
+			pm.deletePersistent( obj );
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 	@SuppressWarnings("unchecked")
