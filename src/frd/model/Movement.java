@@ -39,4 +39,11 @@ public class Movement {
 		this.description = description;
 	}
 
+	public void setCantidad(Long cantidad) {
+		// TODO Auto-generated method stub
+		this.cantidad = cantidad;
+	}
+	public Long getCantidad() {
+		return cantidad;
+	}
 }
