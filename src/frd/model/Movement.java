@@ -15,6 +15,8 @@ public class Movement {
 	@Persistent
 	private Date date;
 	@Persistent
+	private Long cantidad;
+	@Persistent
 	private String description;
 	@Persistent
 	private Long lotId;
