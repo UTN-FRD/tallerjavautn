@@ -3,6 +3,7 @@ package frd.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
+import frd.model.Lot;
 import frd.model.Movement;
 
 public class MovementManager extends DataManager {
@@ -12,15 +13,9 @@ public class MovementManager extends DataManager {
 		return DataManager.getAll(Movement.class);			
 	}
 	
-	public static boolean remove( Long id ){
-		Movement m = pm.getObjectById( Movement.class, id );
-		if ( m != null ) {
-			DataManager.remove( m );
-			return true;
-		}
-		else {
-			return false;
-		}
+	public static Boolean remove( Long id ) {
+		return DataManager.remove( Movement.class, id );
+		
 	}
 	
 }
