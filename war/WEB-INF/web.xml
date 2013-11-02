@@ -23,6 +23,16 @@
 		<servlet-name>Lot</servlet-name>
 		<url-pattern>/lot</url-pattern>
 	</servlet-mapping>
+	<!-- test -->
+	<servlet>
+		<servlet-name>Test Producto</servlet-name>
+		<servlet-class>frd.test.ProductTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Test Producto</servlet-name>
+		<url-pattern>/test/product</url-pattern>
+	</servlet-mapping>
+		
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
