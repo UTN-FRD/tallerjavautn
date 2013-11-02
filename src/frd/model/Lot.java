@@ -56,4 +56,14 @@ public class Lot {
 	public void setCurrentAmount(double currentAmount) {
 		this.currentAmount = currentAmount;
 	}
+
+	public void setProduct(Long product) {
+		this.product = product;
+		
+	}
+
+	public Long getProduct() {
+		return product;
+		
+	}
 }
