@@ -12,14 +12,7 @@ public class LotManager extends DataManager {
 	}
 	
 	public static Boolean remove( Long id ) {
-		Lot l = pm.getObjectById( Lot.class, id );
-		if ( l != null ) {
-			DataManager.remove( l );
-			return true;
-		}
-		else {
-			return false;
-		}
+		return DataManager.remove( Lot.class, id);
 		
 	}
 
