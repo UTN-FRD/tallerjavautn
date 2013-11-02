@@ -8,7 +8,7 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Product {
 	@PrimaryKey
-    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    @Persistent(valueStrategy = IdGeneratorStrategy.SEQUENCE)
 	private Long id;
 	@Persistent
 	private String name;

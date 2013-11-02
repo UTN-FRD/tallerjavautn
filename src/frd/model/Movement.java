@@ -10,7 +10,7 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Movement {
 	@PrimaryKey
-    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    @Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
 	private Long id;
 	@Persistent
 	private Date date;

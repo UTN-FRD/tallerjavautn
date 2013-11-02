@@ -18,8 +18,6 @@ public class DataManager {
 			pm.currentTransaction().commit();
 		}catch(Exception e){
 			pm.currentTransaction().rollback();
-		}finally{
-			//pm.close();
 		}
 		return obj;
 	}
@@ -35,7 +33,7 @@ public class DataManager {
 		try {
 			results = new ArrayList<T>();
 			for(T o : (List<T>) q.execute()){
-				results.add(  pm.detachCopy(o) );
+				results.add( pm.detachCopy(o) );
 			}
 		} finally {
 			q.closeAll();
