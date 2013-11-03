@@ -7,7 +7,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">	
 	<title>Lotes</title>
 </head>
 
@@ -18,7 +18,7 @@
 		<form action="lot">
 			<!-- completar con los campos necesarios para el lote -->
 			<!-- Fecha de Creación:<input type="text" name="createDate"><br> -->
-			Fecha de Vencimiento:<input type="text" name="dueDate"><br>
+			Fecha de Vencimiento:<input type="date" name="dueDate"><br>
 			Monto inicial:<input type="text" name="initialAmount"><br>
 			Monto actual:<input type="text" name="currentAmount"><br>
 			Id Producto:<input type="text" name="product"><br>
@@ -47,7 +47,7 @@
 				<tr>
 					<td><%= l.getDueDate() %></td>
 					<td><%= l.getInitialAmount() %></td>
-					<td><%= l.getCurrentAmount() %></td>
+					<td><%= l.getCurrent()%></td>
 					<td><%= l.getProduct() %></td>
 				</tr>
 			<% 

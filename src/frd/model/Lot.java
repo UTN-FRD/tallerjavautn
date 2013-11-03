@@ -40,9 +40,10 @@ public class Lot {
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
-
-	public double getInitialAmount() {
-		return initialAmount;
+	//initialAmount es double, pero construyendo el getter de esta forma
+	//obtengo un int(usa el cast)
+	public int getInitialAmount() {
+		return (int) initialAmount;
 	}
 
 	public void setInitialAmount(double initialAmount) {
@@ -52,7 +53,12 @@ public class Lot {
 	public double getCurrentAmount() {
 		return currentAmount;
 	}
-
+	//por otra parte, otra forma de hacerlo es haciendo un getter auxiliar
+	//que "castee" el getter original
+	public int getCurrent() {
+		return (int) this.getCurrentAmount();
+	}
+	
 	public void setCurrentAmount(double currentAmount) {
 		this.currentAmount = currentAmount;
 	}

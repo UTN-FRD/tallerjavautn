@@ -22,6 +22,10 @@ public class Movement {
 	private Long lotId;
 	
 	public Movement(){}
+	
+	public Long getId() {
+		return id;
+	}
 
 	public Date getDate() {
 		return date;
@@ -45,5 +49,11 @@ public class Movement {
 	}
 	public Long getCantidad() {
 		return cantidad;
+	}
+//	public double getCant() {
+//		return (double) this.getCantidad();
+//	}
+	public Long getLotId() {
+		return lotId;
 	}
 }
