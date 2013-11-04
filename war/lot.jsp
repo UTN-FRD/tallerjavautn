@@ -7,28 +7,43 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">	
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/resources/estilos.css" rel="stylesheet">	
 	<title>Lotes</title>
 </head>
 
 <body>
-	<div class="jumbotron">
+	<div class="jumbotron"> <!-- contenedor principal bootstrap -->
+		
 		<h1>Lotes</h1>
 		<hr>
 		<form action="lot">
 			<!-- completar con los campos necesarios para el lote -->
 			<!-- Fecha de Creación:<input type="text" name="createDate"><br> -->
-			Fecha de Vencimiento:<input type="date" name="dueDate"><br>
-			Monto inicial:<input type="text" name="initialAmount"><br>
-			Monto actual:<input type="text" name="currentAmount"><br>
-			Id Producto:<input type="text" name="product"><br>
-			<input type="submit">
+			<div class="form-group">
+			Fecha de Vencimiento:<input type="date" name="dueDate" class="form-control">
+			</div>
+
+			<div class="form-group">
+			Monto inicial:<input type="text" name="initialAmount" class="form-control">
+			</div>
+
+			<div class="form-group">
+			Monto actual:<input type="text" name="currentAmount" class="form-control">
+			</div>
+			
+			<div class="form-group">
+			Id Producto:<input type="text" name="product" class="form-control">
+			</div>
+
+			<input type="submit" class="btn btn-primary">
+
 		</form>
 		<hr>
 		<!-- Tabla con todos los objetos enviados en el request desde el servlet -->
-		<div class="panel panel-primary">
+		<div class="panel panel-primary"><!-- panel bootstrap -->
 			
-			<div class="panel-heading">Lot</div>
+			<div class="panel-heading">Lot</div><!-- encabezado panel bootstrap -->
 			
 			<table align="center" width="100%" class="table">
 			<% 
