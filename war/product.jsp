@@ -7,66 +7,89 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">	
-	<link href="/resources/estilos.css" rel="stylesheet">
+	<script src="/js/jquery-2.0.3.min.js"></script>
+	<link href="/css/bootstrap.css" rel="stylesheet">
 	<title>Productos</title>
+	
+	<script type="text/javascript">
+	function editar(id, name, desc){
+		$('#productId').val(id);
+		$('#name').val(name);
+		$('#description').val(desc);
+	}
+	</script>
 </head>
 
 <body>
-
-	<div class="jumbotron"> <!-- contenedor principal bootstrap -->
-
-		<h1>Productos</h1>
-		<hr>
-
-		<form action="product">
-
-			<div class=form-group>
-			Nombre:<input type="text" name="name" class="form-control">
+	<jsp:include page="/resources/menu.jsp"></jsp:include>
+	
+	<div class="bs-docs-section">
+		<div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1>Productos</h1>
+            </div>
+          </div>
+        </div>
+		<div class="row center-block">
+			<div class="" style="width:50%;margin:auto">
+				<div class="well well-lg">
+					<form action="product" class="form-horizontal">
+						<fieldset>
+							<legend>Alta y modificaci&oacute;n de productos:</legend>
+							<div class="form-group">
+								<div class="form-group">
+				                    <label for="name" class="col-lg-2 control-label">Nombre</label>
+				                    <div class="col-lg-10">
+				                      <input type="text" class="form-control" name="name" id="name" placeholder="Nombre del producto">
+				                    </div>
+				                </div>
+							</div>
+							<div class="form-group">
+								<div class="form-group">
+				                    <label for="description" class="col-lg-2 control-label">Descripci&oacute;n</label>
+				                    <div class="col-lg-10">
+				                      <input type="text" class="form-control" id="description" name="description" placeholder="Descripción del producto">
+				                    </div>
+				                </div>
+							</div>
+							<input type="hidden" name="productId" id="productId">
+							<input type="submit" class="btn btn-primary" value="Guardar">
+						</fieldset>
+					</form>
+				</div>
 			</div>
+		</div>
 
-			<div class=form-group>
-			Descripción:<input type="text" name="description" class="form-control">
-			</div>
-
-			<input type="submit" class="btn btn-primary">
-		</form>
-
-		<hr>
-
-		<div class="panel panel-primary"> <!-- panel bootstrap -->
-
-			<div class="panel-heading">Products</div> <!-- encabezado de panel bootstrap -->
-
-			<table class="table">
+		<div class="row">
+		  <div class="col-lg-12">
+            <div class="bs-example">
+              <div class="list-group">
 			<% List<Product> products = (List<Product>)request.getAttribute("products");
 			if(products!=null && products.size()>0){
-			%>
-				<tr>
-					<td>Nombre</td>
-					<td>Descripción</td>
-				</tr>
-			<%
 				for( Product prod : products ) { 
 			%>
-				<tr>
-					<td><%= prod.getName() %></td>
-					<td><%= prod.getDescription() %></td>
-				</tr>
+                <button type="button" class="btn btn-primary btn-xs" onclick="editar('<%= prod.getId() %>', '<%= prod.getName() %>', '<%= prod.getDescription() %>')" style="float:right;z-index:1;position:relative;top:10px;left:-10px;">Editar</button>
+                <a href="lot?productId=<%= prod.getId() %>" class="list-group-item" style="margin-bottom:20px">
+	              <h4 class="list-group-item-heading"><%= prod.getName() %></h4>
+	              <p class="list-group-item-text"><%= prod.getDescription() %></p>
+                </a>
 			<% 
 				}
 			}else{
 			%>
-				<tr>
-					<td>No hay productos cargados</td>
-				</tr>
+                <a href="#" class="list-group-item">
+                  <h4 class="list-group-item-heading">No hay productos cargados</h4>
+                </a>
 			<%
 			}
 			%>	
-			</table>
+              </div>
+            </div>
+          </div>
 		</div>
-
 	</div>
-
+	
+	<jsp:include page="/resources/footer.jsp"></jsp:include>
 </body>
 </html>

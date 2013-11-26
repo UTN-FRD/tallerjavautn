@@ -2,24 +2,35 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="frd.model.Movement" %>
+<%@ page import="frd.util.DateUtil" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/resources/estilos.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
 	<title>Movimientos</title>
 </head>
 
 <body>
-	<div class="jumbotron"><!-- contenedor principal bootstrap -->
-		<h1>Movimientos</h1>
-		<hr>
+	<jsp:include page="/resources/menu.jsp"></jsp:include>
+
+	<div class="bs-docs-section">
+		<div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1>Movimientos</h1>
+            </div>
+          </div>
+        </div>
+		<div class="row center-block">
+			<div class="" style="width:50%;margin:auto">
+				<div class="well well-lg">
 		<form action="movement">
+			<input type="hidden" name="lotId" value="<%= request.getParameter("lotId") %>">
 
 			<div class="form-group">
-			Fecha:<input type="text" name="date" class="form-control">
+			Fecha:<input type="date" name="date" class="form-control" value="<%= DateUtil.today4Input() %>">
 			</div>
 
 			<div class="form-group">
@@ -29,33 +40,35 @@
 			<div class="form-group">
 			Descripcion:<input type="text" name="description" class="form-control">
 			</div>
-
-			<div class="form-group">
-			LotId:<input type="text" name="lotId" class="form-control">
-			</div>
-
-			<input type="submit" class="btn btn-primary">
+			<input type="submit" class="btn btn-primary" value="Guardar">
 		</form>
-		<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		  <div class="col-lg-12">
 		<!-- Tabla con todos los objetos enviados en el request desde el servlet -->
 		
 		<div class="panel panel-primary"><!-- panel bootstrap -->
 			
 			<div class="panel-heading">Movements</div><!-- encabezado panel bootstrap -->		 	
 			
-			<table align="center" width="100%" class="table">
+			<table align="center" width="100%" class="table table-striped table-bordered table-hover">
 			<%
 				List<Movement> movements= (List<Movement>)request.getAttribute("movements");
 			
 				if( movements!=null && movements.size()>0 ){
 			%>
-				<tr>
-					<td>Id</td>
-					<td>Fecha</td>
-					<td>Cantidad</td>
-					<td>Descripcion</td>
-					<td>LotId</td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Fecha</th>
+						<th>Cantidad</th>
+						<th>Descripcion</th>
+						<th>LotId</th>
+					</tr>
+				</thead>
 			<%
 					for( Movement mov : movements ) { 
 			%>
@@ -80,6 +93,10 @@
 			</table>
 		</div>
 	</div>
-</body>
+		          </div>
+		</div>
+	
 
+	<jsp:include page="/resources/footer.jsp"></jsp:include>
+</body>
 </html>

@@ -65,11 +65,17 @@ public class Lot {
 
 	public void setProduct(Long product) {
 		this.product = product;
-		
 	}
 
 	public Long getProduct() {
 		return product;
-		
+	}
+	
+	public Long getId(){
+		return id;
+	}
+	
+	public void setId(Long id){
+		this.id = id;
 	}
 }

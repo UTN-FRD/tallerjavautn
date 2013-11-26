@@ -2,21 +2,31 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="frd.model.Lot" %>
+<%@ page import="frd.util.DateUtil" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/resources/estilos.css" rel="stylesheet">	
+	<link href="/css/bootstrap.css" rel="stylesheet">
 	<title>Lotes</title>
 </head>
 
 <body>
-	<div class="jumbotron"> <!-- contenedor principal bootstrap -->
-		
-		<h1>Lotes</h1>
-		<hr>
+	<jsp:include page="/resources/menu.jsp"></jsp:include>
+
+	<div class="bs-docs-section">
+		<div class="page-header">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1>Lotes</h1>
+            </div>
+          </div>
+        </div>
+		<div class="row center-block">
+			<div class="" style="width:50%;margin:auto">
+				<div class="well well-lg">
 		<form action="lot">
 			<!-- completar con los campos necesarios para el lote -->
 			<!-- Fecha de Creación:<input type="text" name="createDate"><br> -->
@@ -39,31 +49,38 @@
 			<input type="submit" class="btn btn-primary">
 
 		</form>
-		<hr>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		  <div class="col-lg-12">
 		<!-- Tabla con todos los objetos enviados en el request desde el servlet -->
-		<div class="panel panel-primary"><!-- panel bootstrap -->
+		<div class="table-responsive"><!-- panel bootstrap -->
 			
-			<div class="panel-heading">Lot</div><!-- encabezado panel bootstrap -->
-			
-			<table align="center" width="100%" class="table">
+			<table align="center" width="100%" class="table table-striped table-bordered table-hover">
 			<% 
 			List<Lot> lots = (List<Lot>)request.getAttribute("lots");
 			if(lots!=null && lots.size()>0){
 			%>
-				<tr>
-					<td>Fecha de vencimiento</td>
-					<td>Monto inicial</td>
-					<td>Monto actual</td>
-					<td>Id Producto</td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Fecha de vencimiento</th>
+						<th>Cantidad inicial</th>
+						<th>Cantidad actual</th>
+						<th>Id Producto</th>
+						<th></th>
+					</tr>
+				</thead>
 			<%
 				for( Lot l : lots ) { 
 			%>
 				<tr>
-					<td><%= l.getDueDate() %></td>
+					<td><%= DateUtil.format( l.getDueDate() ) %></td>
 					<td><%= l.getInitialAmount() %></td>
 					<td><%= l.getCurrent()%></td>
 					<td><%= l.getProduct() %></td>
+					<td><a href="movement?lotId=<%= l.getId() %>">Detalles</a></td>
 				</tr>
 			<% 
 				}
@@ -78,6 +95,9 @@
 			</table>
 		</div>
 	</div>
+	          </div>
+		</div>
+	
+	<jsp:include page="/resources/footer.jsp"></jsp:include>
 </body>
-
 </html>
