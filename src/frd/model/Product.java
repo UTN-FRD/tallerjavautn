@@ -14,13 +14,14 @@ public class Product {
 	private String name;
 	@Persistent
 	private String description;
+	@Persistent
+	private String userMail;
 	
 	public Product(){}
 
 	public String getName() {
 		return name;
 	}
-	
 
 	public void setName(String name) {
 		this.name = name;
@@ -42,4 +43,11 @@ public class Product {
 		this.id = id;
 	}
 	
+	public String getUserMail() {
+		return userMail;
+	}
+
+	public void setUserMail(String usermail) {
+		userMail = usermail;
+	}
 }
