@@ -18,6 +18,7 @@ public class MovementServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Movement move = null;
+				
 		if((req.getParameter("cantidad") != null) && (req.getParameter("date") != null) && (req.getParameter("description") != null) ){
 			Long cantidad = new Long ( req.getParameter("cantidad") );
 			String description = new String( req.getParameter("description") );
@@ -31,8 +32,14 @@ public class MovementServlet extends HttpServlet {
 				MovementManager.save(move);
 			}
 		}
-		List<Movement> movements = MovementManager.getAll();
+
+		String idParam = req.getParameter("lotId");
+		System.out.println(idParam);
 		
+		Long id = new Long( idParam );
+		
+		List<Movement> movements = MovementManager.listaMovement(id);
+	
 		req.setAttribute("movements", movements);
 		req.getRequestDispatcher("/movement.jsp").forward(req, resp);
 		
