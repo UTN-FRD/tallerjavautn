@@ -24,7 +24,7 @@ public class LotServlet extends HttpServlet {
 
 		Lot lot = null;
 		
-		if(req.getParameter("dueDate") != null && req.getParameter("initialAmount") != null && req.getParameter("currentAmount") != null && req.getParameter("product") != null) {
+		if(req.getParameter("dueDate") != null && req.getParameter("initialAmount") != null && req.getParameter("currentAmount") != null) {
 
 			Date dueDate = DateUtil.getDate(req.getParameter("dueDate"));
 			Double initialAmount = new Double( req.getParameter("initialAmount") );
@@ -41,10 +41,15 @@ public class LotServlet extends HttpServlet {
 				lot.setProduct(product);
 				LotManager.save(lot);
 			}
+			
 		}
-
 		
-		List<Lot> lots = LotManager.getAll();
+		List<Lot> lots = null;
+		Long prodId = Long.parseLong( req.getParameter( "productId" ) );
+
+		if ( req.getParameter("productId") != null ) {
+			lots = LotManager.getByProductId( prodId );
+		}
 		
 		req.setAttribute("lots", lots);
 		req.getRequestDispatcher("/lot.jsp").forward(req, resp);
