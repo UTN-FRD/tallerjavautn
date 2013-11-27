@@ -8,6 +8,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<script src="/js/jquery-2.0.3.min.js"></script>
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<title>Movimientos</title>
 </head>
