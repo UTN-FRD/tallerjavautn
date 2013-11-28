@@ -37,4 +37,9 @@ public class LotManager extends DataManager {
 		
 	}
 
+	public static void updateAmount(Long lotId, Long cantidad) {
+		Lot lot = pm.getObjectById(Lot.class, lotId);
+		lot.setCurrentAmount( lot.getCurrentAmount()-cantidad );
+	}
+
 }

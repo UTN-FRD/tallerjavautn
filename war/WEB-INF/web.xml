@@ -5,6 +5,7 @@
             <url-pattern>/product</url-pattern>
             <url-pattern>/lot</url-pattern>
             <url-pattern>/movement</url-pattern>
+            <url-pattern>/expiredProducts</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>*</role-name>

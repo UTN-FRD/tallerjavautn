@@ -29,6 +29,7 @@
 			<div class="" style="width:50%;margin:auto">
 				<div class="well well-lg">
 		<form action="lot">
+			<input type="hidden" name="productId" value="<%= request.getParameter("productId") %>">
 			<!-- completar con los campos necesarios para el lote -->
 			<!-- Fecha de Creación:<input type="text" name="createDate"><br> -->
 			<div class="form-group">
@@ -39,16 +40,7 @@
 			Monto inicial:<input type="text" name="initialAmount" class="form-control">
 			</div>
 
-			<div class="form-group">
-			Monto actual:<input type="text" name="currentAmount" class="form-control">
-			</div>
-			
-			<div class="form-group">
-			Id Producto:<input type="text" name="product" class="form-control">
-			</div>
-
 			<input type="submit" class="btn btn-primary">
-
 		</form>
 				</div>
 			</div>

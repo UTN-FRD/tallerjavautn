@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import frd.model.Movement;
+import frd.persistence.LotManager;
 import frd.persistence.MovementManager;
 import frd.util.DateUtil;
 
@@ -31,6 +32,8 @@ public class MovementServlet extends HttpServlet {
 			move.setDate(date);
 			move.setLotId( lotId );
 			MovementManager.save(move);
+			
+			LotManager.updateAmount( lotId, cantidad );
 		}
 		
 		String idParam = req.getParameter("lotId");
@@ -44,10 +47,10 @@ public class MovementServlet extends HttpServlet {
 		req.getRequestDispatcher("/movement.jsp").forward(req, resp);
 		
 		// Servlet para ABM de movimientos
-		// 1- si vienen parámetros no nulos del objeto, quiere decir que:
-		//       a- si el id es nulo se está agregando uno nuevo
-		//       b- si el id no es nulo se está modificando
-		// 2- si viene solo el parámetro id, se está eliminando el objeto
+		// 1- si vienen parï¿½metros no nulos del objeto, quiere decir que:
+		//       a- si el id es nulo se estï¿½ agregando uno nuevo
+		//       b- si el id no es nulo se estï¿½ modificando
+		// 2- si viene solo el parï¿½metro id, se estï¿½ eliminando el objeto
 		// 3- siempre se debe completar la lista con todos los objetos en la base, para mostrar la tabla
 	}
 }
