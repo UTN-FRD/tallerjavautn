@@ -51,7 +51,7 @@
 	          <div class="col-lg-8">
 	            <div class="bs-example">
 	              <h2>Proyecto de los alumnos</h2>
-	              <p>En el taller de java de la <a href="http://www.frd.utn.edu.ar/">Universidad Tecnologica Nacional - Facultad regional Delta</a> se creo este maravilloso sistema de stocks.</p>
+	              <p>En el taller de java de la <a href="http://www.frd.utn.edu.ar/">Universidad Tecnologica Nacional - Facultad regional Delta</a> se creo este maravilloso sistema de stocks que administra el stock de productos agrupados en lotes de cada usuario.</p>
 	              <p><small>Este es el resultado del esfuerzo colectivo puesto fuera de los horarios de clases.</small></p>
 	              <p>Bajo las alas de nuestro guia <strong>Sergio Viera</strong>.</p>
 	              <p>Los invitamos a saber mas acerca del grupo de nosotros en la pestaña acerca de nosotros.</em>.</p>
