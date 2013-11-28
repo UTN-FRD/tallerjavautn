@@ -23,6 +23,11 @@
 		<servlet-name>Lot</servlet-name>
 		<servlet-class>frd.servlet.LotServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ProductosExpirados</servlet-name>
+		<servlet-class>frd.servlet.ExpiredProductServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>Producto</servlet-name>
 		<url-pattern>/product</url-pattern>
@@ -35,6 +40,11 @@
 		<servlet-name>Lot</servlet-name>
 		<url-pattern>/lot</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProductosExpirados</servlet-name>
+		<url-pattern>/expiredProducts</url-pattern>
+	</servlet-mapping>
+	
 	<!-- test -->
 	<servlet>
 		<servlet-name>Test Producto</servlet-name>
