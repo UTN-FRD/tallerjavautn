@@ -58,5 +58,20 @@ public class ProductManager extends DataManager {
 		return ret;
 		
 	}
+			
+	public static List<Product> getByProductUserMail( String userMail ){
+		Query q = pm.newQuery(Product.class);
+		q.setFilter("userMail== :param");
+		List<Product> results = null;
+		try {
+			results = (List<Product>) q.execute(userMail);
+			
+		} finally {
+			q.closeAll();
+		}
+		
+		return results;
+		
+	}
 
 }
