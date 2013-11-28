@@ -56,4 +56,9 @@ public class Movement {
 	public Long getLotId() {
 		return lotId;
 	}
+	
+	public void setLotId(Long lotId) {
+		// TODO Auto-generated method stub
+		this.lotId = lotId;
+	}
 }
