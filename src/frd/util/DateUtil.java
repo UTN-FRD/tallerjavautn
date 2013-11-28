@@ -6,6 +6,7 @@ import java.util.Date;
 public class DateUtil {
 
 	static SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+	static SimpleDateFormat df4In = new SimpleDateFormat("yyyy-MM-dd");
 	
 	public static Date getDate( String texto ){
 		Date result = null;
@@ -26,7 +27,17 @@ public class DateUtil {
 	}
 	
 	public static String today4Input(){
-		return (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
+		return df4In.format(new Date());
 	}
-	
+
+	public static Date getDate4Input( String texto ){
+		Date result = null;
+		
+		try{
+			result = df4In.parse( texto );
+		}catch(Exception e){}
+		
+		return result;
+	}
+
 }

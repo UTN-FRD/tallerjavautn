@@ -22,17 +22,15 @@ public class MovementServlet extends HttpServlet {
 		if((req.getParameter("cantidad") != null) && (req.getParameter("date") != null) && (req.getParameter("description") != null) ){
 			Long cantidad = new Long ( req.getParameter("cantidad") );
 			String description = new String( req.getParameter("description") );
-			Date date = DateUtil.getDate(req.getParameter("date"));
+			Date date = DateUtil.getDate4Input(req.getParameter("date"));
 			
-			if ( cantidad!=null && description!=null && date!=null){
-				move = new Movement();
-				move.setCantidad(cantidad);
-				move.setDescription(description);
-				move.setDate(date);
-				MovementManager.save(move);
-			}
+			move = new Movement();
+			move.setCantidad(cantidad);
+			move.setDescription(description);
+			move.setDate(date);
+			MovementManager.save(move);
 		}
-
+		
 		String idParam = req.getParameter("lotId");
 		System.out.println(idParam);
 		
