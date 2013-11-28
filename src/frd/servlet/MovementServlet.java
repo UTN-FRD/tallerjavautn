@@ -15,7 +15,7 @@ import frd.util.DateUtil;
 
 @SuppressWarnings("serial")
 public class MovementServlet extends HttpServlet {
-	
+	 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Movement move = null;
 				
