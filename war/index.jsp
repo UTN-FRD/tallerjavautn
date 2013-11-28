@@ -50,12 +50,11 @@
 	          </div>
 	          <div class="col-lg-8">
 	            <div class="bs-example">
-	              <h2>Example body text</h2>
-	              <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-	              <p><small>This line of text is meant to be treated as fine print.</small></p>
-	              <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
-	              <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
-	              <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+	              <h2>Proyecto de los alumnos</h2>
+	              <p>En el taller de java de la <a href="http://www.frd.utn.edu.ar/">Universidad Tecnologica Nacional - Facultad regional Delta</a> se creo este maravilloso sistema de stocks.</p>
+	              <p><small>Este es el resultado del esfuerzo colectivo puesto fuera de los horarios de clases.</small></p>
+	              <p>Bajo las alas de nuestro guia <strong>Sergio Viera</strong>.</p>
+	              <p>Los invitamos a saber mas acerca del grupo de nosotros en la pestaña acerca de nosotros.</em>.</p>
 	            </div>
 	          </div>
 	        </div>
