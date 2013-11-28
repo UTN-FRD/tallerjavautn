@@ -22,13 +22,12 @@ public class LotManager extends DataManager {
 	@SuppressWarnings("unchecked")
 	public static List<Lot> getByProductId( Long prodId ){
 		Query q = pm.newQuery(Lot.class);
+		q.setFilter( "product == :param" );
 		List<Lot> results = null;
 		try {
 			results = new ArrayList<Lot>();
-			for( Lot l : (List<Lot>) q.execute() ){
-				if ( l.getProduct() == prodId ){
-					results.add( pm.detachCopy( l ) );
-				}
+			for( Lot l : (List<Lot>) q.execute( prodId ) ){
+				results.add( pm.detachCopy( l ) );
 			}
 		} finally {
 			q.closeAll();
