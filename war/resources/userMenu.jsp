@@ -12,8 +12,6 @@
 			<li><a href="<%= UserServiceFactory.getUserService().createLogoutURL("/") %>">Salir</a></li>
 			<li class="divider"></li>
 			<li><a href="/product">Productos</a></li>
-			<li><a href="/lot">Lotes</a></li>
-			<li><a href="/movement">Movimientos</a></li>
 		</ul>
 	</li>
 <% } %>

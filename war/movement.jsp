@@ -28,20 +28,23 @@
 			<div class="" style="width:50%;margin:auto">
 				<div class="well well-lg">
 		<form action="movement">
-			<input type="hidden" name="lotId" value="<%= request.getParameter("lotId") %>">
-
-			<div class="form-group">
-			Fecha:<input type="date" name="date" class="form-control" value="<%= DateUtil.today4Input() %>">
-			</div>
-
-			<div class="form-group">
-			Cantidad:<input type="text" name="cantidad" class="form-control">
-			</div>
-
-			<div class="form-group">
-			Descripcion:<input type="text" name="description" class="form-control">
-			</div>
-			<input type="submit" class="btn btn-primary" value="Guardar">
+			<fieldset>
+				<legend>Registro de nuevo movimiento del lote:</legend>
+				<input type="hidden" name="lotId" value="<%= request.getParameter("lotId") %>">
+	
+				<div class="form-group">
+				Fecha:<input type="date" name="date" class="form-control" value="<%= DateUtil.today4Input() %>">
+				</div>
+	
+				<div class="form-group">
+				Cantidad:<input type="text" name="cantidad" class="form-control">
+				</div>
+	
+				<div class="form-group">
+				Descripcion:<input type="text" name="description" class="form-control">
+				</div>
+				<input type="submit" class="btn btn-primary" value="Guardar">
+			</fieldset>
 		</form>
 				</div>
 			</div>
@@ -53,7 +56,7 @@
 		
 		<div class="panel panel-primary"><!-- panel bootstrap -->
 			
-			<div class="panel-heading">Movements</div><!-- encabezado panel bootstrap -->		 	
+			<div class="panel-heading">Movimientos del lote</div><!-- encabezado panel bootstrap -->		 	
 			
 			<table align="center" width="100%" class="table table-striped table-bordered table-hover">
 			<%
@@ -63,11 +66,9 @@
 			%>
 				<thead>
 					<tr>
-						<th>Id</th>
 						<th>Fecha</th>
 						<th>Cantidad</th>
 						<th>Descripcion</th>
-						<th>LotId</th>
 					</tr>
 				</thead>
 			<%
@@ -75,11 +76,9 @@
 			%>
 					
 				<tr>
-					<td><%= mov.getId() %></td>
-					<td><%= mov.getDate() %></td>
+					<td><%= DateUtil.format( mov.getDate() ) %></td>
 					<td><%= mov.getCantidad() %></td>
 					<td><%= mov.getDescription() %></td>
-					<td><%= mov.getLotId() %></td>
 				</tr>
 			<% 
 					}
